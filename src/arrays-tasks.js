@@ -72,8 +72,21 @@ function findElement(arr, value) {
  *    findAllOccurrences([ null, undefined, null ], null) => 2
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  const resultOccurrences = arr.reduce(function count(accumulator, element) {
+    let countItem = 0;
+    if (element === item) {
+      countItem = 1;
+    } else {
+      countItem = 0;
+    }
+
+    const countOccurrences = accumulator + countItem;
+
+    return countOccurrences;
+  }, 0);
+
+  return resultOccurrences;
 }
 
 /**
